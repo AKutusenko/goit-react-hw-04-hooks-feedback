@@ -1,0 +1,8 @@
+.span:not(:last-child) {
+  margin-right: 15px;
+}
+
+.span {
+  font-style: italic;
+  font-weight: 700;
+}

@@ -1,0 +1,9 @@
+.btn {
+  min-width: 75px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:not(:last-child) {
+  margin-right: 15px;
+}
