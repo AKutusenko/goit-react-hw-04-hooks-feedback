@@ -32,15 +32,7 @@ export default class App extends Component {
       <div className={s.app}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options="Good"
-            onLeaveFeedback={this.onLeaveFeedback}
-          />
-          <FeedbackOptions
-            options="Neutral"
-            onLeaveFeedback={this.onLeaveFeedback}
-          />
-          <FeedbackOptions
-            options="Bad"
+            options={["Good", "Neutral", "Bad"]}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
