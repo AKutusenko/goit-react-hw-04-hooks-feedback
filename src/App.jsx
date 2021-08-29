@@ -27,12 +27,23 @@ export default class App extends Component {
     return Math.floor(result);
   };
 
+  makeBigFirstLetter(str) {
+    if (!str) return str;
+
+    return str[0].toUpperCase() + str.slice(1);
+  }
+
+  getOptions() {
+    const optionsArr = Object.keys(this.state);
+    return optionsArr.map((el) => this.makeBigFirstLetter(el));
+  }
+
   render() {
     return (
       <div className={s.app}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={["Good", "Neutral", "Bad"]}
+            options={this.getOptions()}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
