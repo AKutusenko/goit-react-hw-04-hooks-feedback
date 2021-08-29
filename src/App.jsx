@@ -8,8 +8,7 @@ import Notification from "./components/Notification/Notification";
 export default class App extends Component {
   state = { good: 0, neutral: 0, bad: 0 };
 
-  onLeaveFeedback = (e) => {
-    const name = e.target.innerHTML.toLowerCase();
+  onLeaveFeedback = (name) => {
     this.setState((prevState) => ({ [name]: prevState[name] + 1 }));
   };
 
@@ -27,23 +26,12 @@ export default class App extends Component {
     return Math.floor(result);
   };
 
-  makeBigFirstLetter(str) {
-    if (!str) return str;
-
-    return str[0].toUpperCase() + str.slice(1);
-  }
-
-  getOptions() {
-    const optionsArr = Object.keys(this.state);
-    return optionsArr.map((el) => this.makeBigFirstLetter(el));
-  }
-
   render() {
     return (
       <div className={s.app}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.getOptions()}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
