@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import s from "./FeedbackOptions.module.css";
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export default function FeedbackOptions({ options, addFeedback }) {
   return options.map((option) => (
     <button
       type="button"
-      onClick={() => onLeaveFeedback(option)}
+      onClick={() => addFeedback(option)}
       className={s.btn}
       key={option}
     >
